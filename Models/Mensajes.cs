@@ -15,10 +15,10 @@ namespace ProyectoMongo.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string _id { get; set; }
+        public string id { get; set; }
 
-        [BsonElement("idTelefono")]
-        public int idTelefono { get; set; }
+        //[BsonElement("idTelefono")]
+        //public string idTelefono { get; set; }
 
         public Detalle_Mensaje[] DetallesM { get; set; }
     }
