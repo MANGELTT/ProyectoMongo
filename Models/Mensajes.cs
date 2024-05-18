@@ -11,7 +11,7 @@ using MongoDB.Driver;
 
 namespace ProyectoMongo.Models
 {
-    internal class Mensajes
+    public class Mensajes
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

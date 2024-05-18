@@ -28,27 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.dataGridViewTelefonos = new System.Windows.Forms.DataGridView();
             this.dataGridViewDetalles = new System.Windows.Forms.DataGridView();
+            this.btnInsertar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTelefonos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetalles)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnAgregar
             // 
-            this.button1.Location = new System.Drawing.Point(67, 370);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAgregar.Location = new System.Drawing.Point(46, 335);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(89, 51);
+            this.btnAgregar.TabIndex = 0;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dataGridViewTelefonos
             // 
             this.dataGridViewTelefonos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTelefonos.Location = new System.Drawing.Point(46, 67);
             this.dataGridViewTelefonos.Name = "dataGridViewTelefonos";
+            this.dataGridViewTelefonos.ReadOnly = true;
             this.dataGridViewTelefonos.RowHeadersWidth = 51;
             this.dataGridViewTelefonos.RowTemplate.Height = 24;
             this.dataGridViewTelefonos.Size = new System.Drawing.Size(273, 236);
@@ -64,6 +67,17 @@
             this.dataGridViewDetalles.RowTemplate.Height = 24;
             this.dataGridViewDetalles.Size = new System.Drawing.Size(495, 236);
             this.dataGridViewDetalles.TabIndex = 2;
+            this.dataGridViewDetalles.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDetalles_CellContentDoubleClick);
+            // 
+            // btnInsertar
+            // 
+            this.btnInsertar.Location = new System.Drawing.Point(490, 320);
+            this.btnInsertar.Name = "btnInsertar";
+            this.btnInsertar.Size = new System.Drawing.Size(89, 51);
+            this.btnInsertar.TabIndex = 3;
+            this.btnInsertar.Text = "Insertar";
+            this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // Form1
             // 
@@ -71,9 +85,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1030, 501);
+            this.Controls.Add(this.btnInsertar);
             this.Controls.Add(this.dataGridViewDetalles);
             this.Controls.Add(this.dataGridViewTelefonos);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAgregar);
             this.Name = "Form1";
             this.Text = "IdTelefono";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -85,9 +100,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dataGridViewTelefonos;
         private System.Windows.Forms.DataGridView dataGridViewDetalles;
+        private System.Windows.Forms.Button btnInsertar;
     }
 }
 
