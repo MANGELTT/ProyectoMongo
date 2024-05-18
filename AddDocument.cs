@@ -16,10 +16,12 @@ namespace ProyectoMongo
     public partial class AddDocument : Form
     {
         private IMongoCollection<Mensajes> mensajesCollection;
-        public AddDocument(IMongoCollection<Mensajes> collection)
+        private Form1 formPrincipal;
+        public AddDocument(IMongoCollection<Mensajes> collection, Form1 formPrincipal)
         {
             InitializeComponent();
             mensajesCollection = collection;
+            this.formPrincipal = formPrincipal;
         }
 
         private void AddDocument_Load(object sender, EventArgs e)
@@ -45,6 +47,7 @@ namespace ProyectoMongo
 
                 await mensajesCollection.InsertOneAsync(nuevoMensaje);
                 MessageBox.Show("Documento agregado exitosamente");
+                await formPrincipal.MostrarMensajes();
                 this.Close();
             }
             catch (Exception ex)

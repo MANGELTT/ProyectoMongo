@@ -55,7 +55,7 @@ namespace ProyectoMongo
             await MostrarMensajes();
         }
 
-        private async Task MostrarMensajes()
+        public async Task MostrarMensajes()
         {
             try
             {
@@ -114,7 +114,7 @@ namespace ProyectoMongo
 
         private async void btnAgregar_Click(object sender, EventArgs e)
         {
-            AddDocument formDoc = new AddDocument(mensajesCollection);
+            AddDocument formDoc = new AddDocument(mensajesCollection,this);
             formDoc.Show();
         }
 
