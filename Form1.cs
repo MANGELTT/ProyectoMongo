@@ -135,12 +135,12 @@ namespace ProyectoMongo
                     // Actualizar DetallesM con los datos válidos del DataGridView
                     var detallesList = dataGridViewDetalles.Rows
                         .OfType<DataGridViewRow>()
-                        .Where(row => !row.IsNewRow && row.Cells["NumeroTelefonoColumn"].Value != null && row.Cells["CompaniaColumn"].Value != null && row.Cells["MensajeColumn"].Value != null)
+                        .Where(row => !row.IsNewRow && row.Cells["NumeroTelefonoColumn"].Value != null)
                         .Select(row => new Detalle_Mensaje
                         {
                             NumeroTelefono = long.Parse(row.Cells["NumeroTelefonoColumn"].Value.ToString()),
-                            Compania = row.Cells["CompaniaColumn"].Value.ToString(),
-                            Mensaje = row.Cells["MensajeColumn"].Value.ToString()
+                            Compania = row.Cells["CompaniaColumn"].Value != null ? row.Cells["CompaniaColumn"].Value.ToString() : string.Empty,
+                            Mensaje = row.Cells["MensajeColumn"].Value != null ? row.Cells["MensajeColumn"].Value.ToString() : string.Empty
                         })
                         .ToArray();
 

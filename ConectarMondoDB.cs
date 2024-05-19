@@ -20,7 +20,8 @@ namespace ProyectoMongo
 
         public ConectarMondoDB()
         {
-            client = new MongoClient("mongodb://localhost:27017");
+            //client = new MongoClient("mongodb://localhost:27017");
+            client = new MongoClient("mongodb+srv://202310291:NAzAtFajoQNVgguY@bd-teltec.6vuhjjc.mongodb.net/");
             database = client.GetDatabase("BD_TelTec");
             MensajesCollection = database.GetCollection<Mensajes>("Mensajes");
 
